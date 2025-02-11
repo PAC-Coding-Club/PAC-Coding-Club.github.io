@@ -101,6 +101,15 @@ button {
     background-color: #3e8e41;
 }
 
+.button-left-2 {
+    position: fixed;
+    left: 180px;
+    background-color: #4CAF50;
+}
+.button-left-2:hover {
+    background-color: #3e8e41;
+}
+
 .button-right {
     position: fixed;
     right: 20px;
