@@ -28,7 +28,7 @@
             <p>Example:</p>
             <pre class="code-container">
                 <code>
-                    <span class="line-number">1</span> <span class="variable">position</span> = <span class="datatype">(100, 200)</span>
+<span class="line-number">1</span> <span class="variable">position</span> = <span class="datatype">(100, 200)</span>
                 </code>
             </pre>
             <p>This represents a point 100 pixels to the right and 200 pixels down from the top-left corner.</p>
@@ -43,9 +43,9 @@
             <p>Example:</p>
             <pre class="code-container">
                 <code>
-                    <span class="line-number">1</span> <span class="variable">rect_color</span> = <span class="datatype">(255, 0, 0)</span>  <span class="comment"># Red color</span>
-                    <span class="line-number">2</span> <span class="variable">rect_pos</span> = <span class="datatype">(100, 100, 50, 50)</span>  <span class="comment"># x, y, width, height</span>
-                    <span class="line-number">3</span> <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="variable">rect_color</span>, <span class="variable">rect_pos</span>)
+<span class="line-number">1</span> <span class="variable">rect_color</span> = <span class="datatype">(255, 0, 0)</span>  <span class="comment"># Red color</span>
+<span class="line-number">2</span> <span class="variable">rect_pos</span> = <span class="datatype">(100, 100, 50, 50)</span>  <span class="comment"># x, y, width, height</span>
+<span class="line-number">3</span> <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="variable">rect_color</span>, <span class="variable">rect_pos</span>)
                 </code>
             </pre>
         </section>
@@ -58,14 +58,14 @@
             </p>
             <pre class="code-container">
                 <code>
-                    <span class="line-number">1</span> <span class="variable">x</span> = <span class="datatype">100</span>
-                    <span class="line-number">2</span> <span class="variable">y</span> = <span class="datatype">100</span>
-                    <span class="line-number">3</span>
-                    <span class="line-number">4</span> <span class="statement">while</span> <span class="datatype">True</span>:
-                    <span class="line-number">5</span>     <span class="variable">x</span> <span class="operator">+=</span> <span class="datatype">1</span>  <span class="comment"># Move right</span>
-                    <span class="line-number">6</span>     <span class="function">screen.fill</span>(<span class="datatype">(0, 0, 0)</span>)  <span class="comment"># Clear screen</span>
-                    <span class="line-number">7</span>     <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="datatype">(255, 0, 0)</span>, <span class="datatype">(x, y, 50, 50)</span>)
-                    <span class="line-number">8</span>     <span class="function">pygame.display.update</span>()
+<span class="line-number">1</span> <span class="variable">x</span> = <span class="datatype">100</span>
+<span class="line-number">2</span> <span class="variable">y</span> = <span class="datatype">100</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span> <span class="statement">while</span> <span class="datatype">True</span>:
+<span class="line-number">5</span>     <span class="variable">x</span> <span class="operator">+=</span> <span class="datatype">1</span>  <span class="comment"># Move right</span>
+<span class="line-number">6</span>     <span class="function">screen.fill</span>(<span class="datatype">(0, 0, 0)</span>)  <span class="comment"># Clear screen</span>
+<span class="line-number">7</span>     <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="datatype">(255, 0, 0)</span>, <span class="datatype">(x, y, 50, 50)</span>)
+<span class="line-number">8</span>     <span class="function">pygame.display.update</span>()
                 </code>
             </pre>
             <p>This will move the rectangle to the right continuously.</p>
@@ -79,21 +79,21 @@
             </p>
             <pre class="code-container">
                 <code>
-                    <span class="line-number">1</span> <span class="variable">x</span>, <span class="variable">y</span> = <span class="datatype">200</span>, <span class="datatype">200</span>
-                    <span class="line-number">2</span> <span class="statement">while</span> <span class="datatype">True</span>:
-                    <span class="line-number">3</span>     <span class="variable">events</span> = <span class="function">pygame.event.get</span>()
-                    <span class="line-number">4</span>     <span class="statement">for</span> <span class="variable">event</span> <span class="statement">in</span> <span class="variable">events</span>:
-                    <span class="line-number">5</span>         <span class="statement">if</span> <span class="variable">event.type</span> == <span class="function">pygame.KEYDOWN</span>:
-                    <span class="line-number">6</span>             <span class="statement">if</span> <span class="variable">event.key</span> == <span class="function">pygame.K_UP</span>:
-                    <span class="line-number">7</span>                 <span class="variable">y</span> <span class="operator">-=</span> <span class="datatype">5</span>
-                    <span class="line-number">8</span>             <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_DOWN</span>:
-                    <span class="line-number">9</span>                 <span class="variable">y</span> <span class="operator">+=</span> <span class="datatype">5</span>
-                    <span class="line-number">10</span>            <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_LEFT</span>:
-                    <span class="line-number">11</span>                <span class="variable">x</span> <span class="operator">-=</span> <span class="datatype">5</span>
-                    <span class="line-number">12</span>            <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_RIGHT</span>:
-                    <span class="line-number">13</span>                <span class="variable">x</span> <span class="operator">+=</span> <span class="datatype">5</span>
-                    <span class="line-number">14</span>    <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="datatype">(255, 0, 0)</span>, <span class="datatype">(x, y, 50, 50)</span>)
-                    <span class="line-number">15</span>    <span class="function">pygame.display.update</span>()
+<span class="line-number">1</span> <span class="variable">x</span>, <span class="variable">y</span> = <span class="datatype">200</span>, <span class="datatype">200</span>
+<span class="line-number">2</span> <span class="statement">while</span> <span class="datatype">True</span>:
+<span class="line-number">3</span>     <span class="variable">events</span> = <span class="function">pygame.event.get</span>()
+<span class="line-number">4</span>     <span class="statement">for</span> <span class="variable">event</span> <span class="statement">in</span> <span class="variable">events</span>:
+<span class="line-number">5</span>         <span class="statement">if</span> <span class="variable">event.type</span> == <span class="function">pygame.KEYDOWN</span>:
+<span class="line-number">6</span>             <span class="statement">if</span> <span class="variable">event.key</span> == <span class="function">pygame.K_UP</span>:
+<span class="line-number">7</span>                 <span class="variable">y</span> <span class="operator">-=</span> <span class="datatype">5</span>
+<span class="line-number">8</span>             <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_DOWN</span>:
+<span class="line-number">9</span>                 <span class="variable">y</span> <span class="operator">+=</span> <span class="datatype">5</span>
+<span class="line-number">10</span>            <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_LEFT</span>:
+<span class="line-number">11</span>                <span class="variable">x</span> <span class="operator">-=</span> <span class="datatype">5</span>
+<span class="line-number">12</span>            <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_RIGHT</span>:
+<span class="line-number">13</span>                <span class="variable">x</span> <span class="operator">+=</span> <span class="datatype">5</span>
+<span class="line-number">14</span>    <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="datatype">(255, 0, 0)</span>, <span class="datatype">(x, y, 50, 50)</span>)
+<span class="line-number">15</span>    <span class="function">pygame.display.update</span>()
                 </code>
             </pre>
             <p>This allows the rectangle to move in all four directions using the arrow keys.</p>

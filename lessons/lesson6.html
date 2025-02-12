@@ -23,11 +23,11 @@
         </p>
         <p>To start using Pygame, you need to import the module and initialize it:</p>
         <pre class="code-container">
-                <code>
-                    <span class="line-number">1</span> <span class="statement">import</span> <span class="function">pygame</span>
-                    <span class="line-number">2</span> <span class="function">pygame.init</span>()
-                </code>
-            </pre>
+            <code>
+<span class="line-number">1</span> <span class="statement">import</span> <span class="function">pygame</span>
+<span class="line-number">2</span> <span class="function">pygame.init</span>()
+            </code>
+        </pre>
     </section>
 
     <section>
@@ -36,11 +36,11 @@
             In Pygame, you can create a window using the <span class="function">pygame.display.set_mode()</span> function.
         </p>
         <pre class="code-container">
-                <code>
-                    <span class="line-number">1</span> <span class="variable">screen</span> = <span class="function">pygame.display.set_mode</span>(<span class="datatype">(800, 600)</span>)
-                    <span class="line-number">2</span> <span class="function">pygame.display.set_caption</span>(<span class="datatype">"My First Game"</span>)
-                </code>
-            </pre>
+            <code>
+<span class="line-number">1</span> <span class="variable">screen</span> = <span class="function">pygame.display.set_mode</span>(<span class="datatype">(800, 600)</span>)
+<span class="line-number">2</span> <span class="function">pygame.display.set_caption</span>(<span class="datatype">"My First Game"</span>)
+            </code>
+        </pre>
         <p>This creates a window with a width of 800 pixels and height of 600 pixels, titled "My First Game".</p>
     </section>
 
@@ -51,15 +51,15 @@
             The main game loop checks for events such as closing the window.
         </p>
         <pre class="code-container">
-                <code>
-                    <span class="line-number">1</span> <span class="statement">while</span> <span class="datatype">True</span>:
-                    <span class="line-number">2</span>     <span class="variable">events</span> = <span class="function">pygame.event.get</span>()
-                    <span class="line-number">3</span>     <span class="statement">for</span> <span class="variable">event</span> <span class="statement">in</span> <span class="variable">events</span>:
-                    <span class="line-number">4</span>         <span class="statement">if</span> <span class="variable">event.type</span> == <span class="function">pygame.QUIT</span>:
-                    <span class="line-number">5</span>             <span class="function">pygame.quit</span>()
-                    <span class="line-number">6</span>             <span class="statement">exit</span>()
-                </code>
-            </pre>
+            <code>
+<span class="line-number">1</span> <span class="statement">while</span> <span class="datatype">True</span>:
+<span class="line-number">2</span>     <span class="variable">events</span> = <span class="function">pygame.event.get</span>()
+<span class="line-number">3</span>     <span class="statement">for</span> <span class="variable">event</span> <span class="statement">in</span> <span class="variable">events</span>:
+<span class="line-number">4</span>         <span class="statement">if</span> <span class="variable">event.type</span> == <span class="function">pygame.QUIT</span>:
+<span class="line-number">5</span>             <span class="function">pygame.quit</span>()
+<span class="line-number">6</span>             <span class="statement">exit</span>()
+            </code>
+        </pre>
         <p>This keeps the window open until the user closes it.</p>
     </section>
 </main>
