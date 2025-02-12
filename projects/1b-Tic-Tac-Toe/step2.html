@@ -33,46 +33,46 @@
 
         <pre class="code-container">
             <code>
-                <span class="line-number">1</span> <span class="variable">board</span> = <span class="list">[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']</span>
-                <span class="line-number">2</span>
-                <span class="line-number">3</span> <span class="function">def</span> <span class="function-name">print_board</span>(<span class="variable">board</span>):
-                <span class="line-number">4</span>     <span class="function">print</span>(<span class="string">f' {board[0]} | {board[1]} | {board[2]} '</span>)
-                <span class="line-number">5</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
-                <span class="line-number">6</span>     <span class="function">print</span>(<span class="string">f' {board[3]} | {board[4]} | {board[5]} '</span>)
-                <span class="line-number">7</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
-                <span class="line-number">8</span>     <span class="function">print</span>(<span class="string">f' {board[6]} | {board[7]} | {board[8]} '</span>)
-                <span class="line-number">9</span>
-                <span class="line-number">10</span> <span class="variable">current_player</span> = <span class="number">0</span>
-                <span class="line-number">11</span> <span class="variable">player_symbols</span> = <span class="list">['x', 'o']</span>
-                <span class="line-number">12</span> <span class="function">print_board</span>(<span class="variable">board</span>)
-                <span class="line-number">13</span>
-                <span class="line-number">14</span> <span class="variable">user_input</span> = <span class="function">input</span>(<span class="string">"Choose your square: "</span>)
-                <span class="line-number">15</span>
-                <span class="line-number">16</span> <span class="keyword">if</span> <span class="function">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] == <span class="string">' '</span>:
-                <span class="line-number">17</span>     <span class="variable">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] = <span class="variable">player_symbols</span>[<span class="variable">current_player</span>]
-                <span class="line-number">18</span> <span class="keyword">else</span>:
-                <span class="line-number">19</span>     <span class="function">print</span>(<span class="string">"Slot already filled!"</span>)
-                <span class="line-number">20</span> <span class="function">print_board</span>(<span class="variable">board</span>)
+<span class="line-number">1</span> <span class="variable">board</span> = <span class="datatype">[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span> <span class="statement">def</span> <span class="function">print_board</span>(<span class="variable">board</span>):
+<span class="line-number">4</span>     <span class="function">print</span>(<span class="datatype">f' {</span><span class="variable">board</span>[<span class="datatype">0</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">1</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">2</span>]<span class="datatype">} '</span>)
+<span class="line-number">5</span>     <span class="function">print</span>(<span class="datatype">'---|---|---'</span>)
+<span class="line-number">6</span>     <span class="function">print</span>(<span class="datatype">f' {</span><span class="variable">board</span>[<span class="datatype">3</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">4</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">5</span>]<span class="datatype">} '</span>)
+<span class="line-number">7</span>     <span class="function">print</span>(<span class="datatype">'---|---|---'</span>)
+<span class="line-number">8</span>     <span class="function">print</span>(<span class="datatype">f' {</span><span class="variable">board</span>[<span class="datatype">6</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">7</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">8</span>]<span class="datatype">} '</span>)
+<span class="line-number">9</span>
+<span class="line-number">10</span> <span class="variable">current_player</span> = <span class="datatype">0</span>
+<span class="line-number">11</span> <span class="variable">player_symbols</span> = <span class="datatype">['x', 'o']</span>
+<span class="line-number">12</span> <span class="function">print_board</span>(<span class="variable">board</span>)
+<span class="line-number">13</span>
+<span class="line-number">14</span> <span class="variable">user_input</span> = <span class="function">input</span>(<span class="datatype">"Choose your square: "</span>)
+<span class="line-number">15</span>
+<span class="line-number">16</span> <span class="statement">if</span> <span class="function">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="datatype">1</span>] == <span class="datatype">' '</span>:
+<span class="line-number">17</span>     <span class="variable">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="datatype">1</span>] = <span class="variable">player_symbols</span>[<span class="variable">current_player</span>]
+<span class="line-number">18</span> <span class="statement">else</span>:
+<span class="line-number">19</span>     <span class="function">print</span>(<span class="datatype">"Slot already filled!"</span>)
+<span class="line-number">20</span> <span class="function">print_board</span>(<span class="variable">board</span>)
             </code>
         </pre>
-        <p>The board setup will output the current state after the user makes their move:</p>
-        <pre class="code-container">
+                <p>The board setup will output the current state after the user makes their move:</p>
+                <pre class="code-container">
             <code>
-                <span class="string">    |   |  </span>
-                <span class="string"> ---|---|--- </span>
-                <span class="string">    |   |  </span>
-                <span class="string"> ---|---|--- </span>
-                <span class="string">    |   |  </span>
+       |   |
+    ---|---|---
+       |   |
+    ---|---|---
+       |   |
             </code>
         </pre>
-        <p>After the user chooses their square (e.g., square 1) and it’s filled with "x," the board will display:</p>
-        <pre class="code-container">
+                <p>After the user chooses their square (e.g., square 1) and it’s filled with "x," the board will display:</p>
+                <pre class="code-container">
             <code>
-                <span class="string">  x |   |  </span>
-                <span class="string"> ---|---|--- </span>
-                <span class="string">    |   |  </span>
-                <span class="string"> ---|---|--- </span>
-                <span class="string">    |   |  </span>
+     x |   |
+    ---|---|---
+       |   |
+    ---|---|---
+       |   |
             </code>
         </pre>
     </section>

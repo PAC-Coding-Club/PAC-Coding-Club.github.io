@@ -30,43 +30,43 @@
 
         <pre class="code-container">
             <code>
-                <span class="line-number">1</span> <span class="variable">board</span> = <span class="list">[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']</span>
-                <span class="line-number">2</span>
-                <span class="line-number">3</span> <span class="function">def</span> <span class="function-name">print_board</span>(<span class="variable">board</span>):
-                <span class="line-number">4</span>     <span class="function">print</span>(<span class="string">f' {board[0]} | {board[1]} | {board[2]} '</span>)
-                <span class="line-number">5</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
-                <span class="line-number">6</span>     <span class="function">print</span>(<span class="string">f' {board[3]} | {board[4]} | {board[5]} '</span>)
-                <span class="line-number">7</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
-                <span class="line-number">8</span>     <span class="function">print</span>(<span class="string">f' {board[6]} | {board[7]} | {board[8]} '</span>)
-                <span class="line-number">9</span>
-                <span class="line-number">10</span> <span class="function">print_board</span>(<span class="variable">board</span>)
+<span class="line-number">1</span> <span class="variable">board</span> = <span class="datatype">[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span> <span class="statement">def</span> <span class="function">print_board</span>(<span class="variable">board</span>):
+<span class="line-number">4</span>     <span class="function">print</span>(<span class="datatype">f' {</span><span class="variable">board</span>[<span class="datatype">0</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">1</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">2</span>]<span class="datatype">} '</span>)
+<span class="line-number">5</span>     <span class="function">print</span>(<span class="datatype">'---|---|---'</span>)
+<span class="line-number">6</span>     <span class="function">print</span>(<span class="datatype">f' {</span><span class="variable">board</span>[<span class="datatype">3</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">4</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">5</span>]<span class="datatype">} '</span>)
+<span class="line-number">7</span>     <span class="function">print</span>(<span class="datatype">'---|---|---'</span>)
+<span class="line-number">8</span>     <span class="function">print</span>(<span class="datatype">f' {</span><span class="variable">board</span>[<span class="datatype">6</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">7</span>]<span class="datatype">} | {</span><span class="variable">board</span>[<span class="datatype">8</span>]<span class="datatype">} '</span>)
+<span class="line-number">9</span>
+<span class="line-number">10</span> <span class="function">print_board</span>(<span class="variable">board</span>)
             </code>
         </pre>
         <p>This will print the initial empty Tic-Tac-Toe board:</p>
         <pre class="code-container">
             <code>
-                <span class="string">    |   |  </span>
-                <span class="string"> ---|---|--- </span>
-                <span class="string">    |   |  </span>
-                <span class="string"> ---|---|--- </span>
-                <span class="string">    |   |  </span>
+       |   |
+    ---|---|---
+       |   |
+    ---|---|---
+       |   |
             </code>
         </pre>
         <p>You can try changing the board values to "x" or "o" to see how the board changes like so.</p>
         <pre class="code-container">
             <code>
-                <span class="line-number">1</span> <span class="variable">board</span> = <span class="list">['x', 'x', 'o', 'x', ' ', ' ', 'x', ' ', 'o']</span>
-                <span class="line-number">2</span> <span class="comment"># Rest of the code here</span>
+<span class="line-number">1</span> <span class="variable">board</span> = <span class="datatype">['x', 'x', 'o', 'x', ' ', ' ', 'x', ' ', 'o']</span>
+<span class="line-number">2</span> <span class="comment"># Rest of the code here</span>
             </code>
         </pre>
         <p>This board setup will output this:</p>
         <pre class="code-container">
             <code>
-                <span class="string">  x | x | o </span>
-                <span class="string"> ---|---|--- </span>
-                <span class="string">  x |   |   </span>
-                <span class="string"> ---|---|--- </span>
-                <span class="string">  x |   | o </span>
+     x | x | o
+    ---|---|---
+     x |   |
+    ---|---|---
+     x |   | o
             </code>
         </pre>
     </section>

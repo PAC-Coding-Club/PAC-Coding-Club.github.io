@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Club - Tic-Tac-Toe Step 5 to Step 6</title>
+    <link rel="stylesheet" href="../../pages.css">
+</head>
+<body>
+<header>
+    <a href="../../index.html" style="text-decoration: none; color: inherit;">
+        <h1>Coding Club Repository</h1>
+    </a>
+</header>
+
+<main>
+    <section>
+        <a href="https://github.com/Melted-Coding-Club/1b-TicTacToe/blob/main/Step%205%20to%206/" target="_blank">
+            <h2>Project 1b: Tic-Tac-Toe</h2>
+        </a>
+    </section>
+
+    <section>
+        <h3>Step 6 - Using Functions to Encapsulate Logic</h3>
+        <ul>
+            <li>Now that we have our board and players set up, we need to implement input validation to make sure that players choose a valid, unoccupied square.</li>
+            <li>We’ll create a function called <code>is_valid_input()</code> that checks if the player's input corresponds to a valid board position (either a number from 1-9 or a coordinate like "a1", "b2", etc.).</li>
+            <li>If the input is valid, the game will proceed, and the current player's symbol ("x" or "o") will be placed in the corresponding position on the board.</li>
+            <li>If the square is already filled, the game will prompt the player to choose another square.</li>
+            <li>We also add a <code>check_win()</code> function to check if any player has won the game by checking for any winning combination on the board.</li>
+            <li>The game will continue until there’s a winner or all squares are filled (which would result in a draw).</li>
+            <li>After every turn, we switch to the next player by alternating between index 0 and 1 in the <code>player_symbols</code> list.</li>
+        </ul>
+
+        <pre class="code-container">
+            <code>
+<span class="line-number">1</span> board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']  # Initialize the game board
+<span class="line-number">2</span> player_symbols = ['x', 'o']  # Player symbols
+<span class="line-number">3</span> current_player = 0  # Start with player 0 (x)
+<span class="line-number">4</span>
+<span class="line-number">5</span> def print_board(board):
+<span class="line-number">6</span>     print(f' {board[0]} | {board[1]} | {board[2]} ')
+<span class="line-number">7</span>     print('---|---|---')
+<span class="line-number">8</span>     print(f' {board[3]} | {board[4]} | {board[5]} ')
+<span class="line-number">9</span>     print('---|---|---')
+<span class="line-number">10</span>     print(f' {board[6]} | {board[7]} | {board[8]} ')
+<span class="line-number">11</span>
+<span class="line-number">12</span> def is_valid_input(user_input):
+<span class="line-number">13</span>     """Validates if input is a valid number or coordinate."""
+<span class="line-number">14</span>     return user_input in ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3']
+<span class="line-number">15</span>
+<span class="line-number">16</span> def convert_to_number(user_input):
+<span class="line-number">17</span>     """Converts coordinate input to board index."""
+<span class="line-number">18</span>     if user_input[0] == 'a':
+<span class="line-number">19</span>         return int(user_input[1]) - 1
+<span class="line-number">20</span>     elif user_input[0] == 'b':
+<span class="line-number">21</span>         return int(user_input[1]) + 2
+<span class="line-number">22</span>     elif user_input[0] == 'c':
+<span class="line-number">23</span>         return int(user_input[1]) + 5
+<span class="line-number">24</span>     return int(user_input) - 1
+<span class="line-number">25</span>
+<span class="line-number">26</span> def check_win(board):
+<span class="line-number">27</span>     """Checks if a player has won the game."""
+<span class="line-number">28</span>     winning_combinations = [
+<span class="line-number">29</span>         [0, 1, 2], [3, 4, 5], [6, 7, 8],  # rows
+<span class="line-number">30</span>         [0, 3, 6], [1, 4, 7], [2, 5, 8],  # columns
+<span class="line-number">31</span>         [0, 4, 8], [2, 4, 6]  # diagonals
+<span class="line-number">32</span>     ]
+<span class="line-number">33</span>     for combo in winning_combinations:
+<span class="line-number">34</span>         if board[combo[0]] == board[combo[1]] == board[combo[2]] != ' ':
+<span class="line-number">35</span>             return True
+<span class="line-number">36</span>     return False
+<span class="line-number">37</span>
+<span class="line-number">38</span> print_board(board)
+<span class="line-number">39</span> while True:
+<span class="line-number">40</span>     user_input = input("Choose your square: ").lower()
+<span class="line-number">41</span>     if not is_valid_input(user_input):
+<span class="line-number">42</span>         print("Invalid input")
+<span class="line-number">43</span>         continue
+<span class="line-number">44</span>     board_position = convert_to_number(user_input)
+<span class="line-number">45</span>     if board[board_position] == ' ':
+<span class="line-number">46</span>         board[board_position] = player_symbols[current_player]
+<span class="line-number">47</span>     else:
+<span class="line-number">48</span>         print("Slot already filled")
+<span class="line-number">49</span>         continue
+<span class="line-number">50</span>
+<span class="line-number">51</span>     if check_win(board):
+<span class="line-number">52</span>         print_board(board)
+<span class="line-number">53</span>         print(f"Player {player_symbols[current_player]} won!")
+<span class="line-number">54</span>         break
+<span class="line-number">55</span>
+<span class="line-number">56</span>     current_player = 1 - current_player  # Switch players
+<span class="line-number">57</span>     print_board(board)
+            </code>
+        </pre>
+
+        <p>This will enable the players to take turns, making moves and checking if any player has won.</p>
+    </section>
+</main>
+
+<div class="button-nav">
+    <button class="nav-button" onclick="location.href='step5.html'">⬅ Previous Step</button>
+    <button class="nav-button" onclick="location.href='guide.html'">⬆ Show step-by-step Guide</button>
+    <button class="nav-button" onclick="location.href='overview.html'">Back to Overview</button>
+</div>
+
+</body>
+</html>

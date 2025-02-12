@@ -35,55 +35,52 @@
 
         <pre class="code-container">
             <code>
-                <span class="line-number">1</span> <span class="variable">board</span> = <span class="list">[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']</span>
-                <span class="line-number">2</span>
-                <span class="line-number">3</span> <span class="function">def</span> <span class="function-name">print_board</span>(<span class="variable">board</span>):
-                <span class="line-number">4</span>     <span class="function">print</span>(<span class="string">f' {board[0]} | {board[1]} | {board[2]} '</span>)
-                <span class="line-number">5</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
-                <span class="line-number">6</span>     <span class="function">print</span>(<span class="string">f' {board[3]} | {board[4]} | {board[5]} '</span>)
-                <span class="line-number">7</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
-                <span class="line-number">8</span>     <span class="function">print</span>(<span class="string">f' {board[6]} | {board[7]} | {board[8]} '</span>)
-                <span class="line-number">9</span>
-                <span class="line-number">10</span> <span class="variable">current_player</span> = <span class="number">0</span>
-                <span class="line-number">11</span> <span class="variable">player_symbols</span> = <span class="list">['x', 'o']</span>
-                <span class="line-number">12</span> <span class="function">print_board</span>(<span class="variable">board</span>)
-                <span class="line-number">13</span>
-                <span class="line-number">14</span> <span class="function">while</span> <span class="keyword">True</span>:
-                <span class="line-number">15</span>     <span class="variable">user_input</span> = <span class="function">input</span>(<span class="string">"Choose your square: "</span>).<span class="function">lower</span>()
-                <span class="line-number">16</span>     <span class="keyword">if</span> <span class="function">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] == <span class="string">' '</span>:
-                <span class="line-number">17</span>         <span class="variable">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] = <span class="variable">player_symbols</span>[<span class="variable">current_player</span>]
-                <span class="line-number">18</span>     <span class="keyword">else</span>:
-                <span class="line-number">19</span>         <span class="function">print</span>(<span class="string">"Slot already filled!"</span>)
-                <span class="line-number">20</span>         <span class="function">continue</span>
-                <span class="line-number">21</span>
-                <span class="line-number">22</span>     <span class="keyword">if</span> (
-                <span class="line-number">23</span>         <span class="variable">board</span>[<span class="number">0</span>] == <span class="variable">board</span>[<span class="number">1</span>] == <span class="variable">board</span>[<span class="number">2</span>] != <span class="string">' '</span>  <span class="comment"># Top row</span>
-                <span class="line-number">24</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">3</span>] == <span class="variable">board</span>[<span class="number">4</span>] == <span class="variable">board</span>[<span class="number">5</span>] != <span class="string">' '</span>  <span class="comment"># Middle row</span>
-                <span class="line-number">25</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">6</span>] == <span class="variable">board</span>[<span class="number">7</span>] == <span class="variable">board</span>[<span class="number">8</span>] != <span class="string">' '</span>  <span class="comment"># Bottom row</span>
-                <span class="line-number">26</span>
-                <span class="line-number">27</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">0</span>] == <span class="variable">board</span>[<span class="number">3</span>] == <span class="variable">board</span>[<span class="number">6</span>] != <span class="string">' '</span>  <span class="comment"># Left column</span>
-                <span class="line-number">28</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">1</span>] == <span class="variable">board</span>[<span class="number">4</span>] == <span class="variable">board</span>[<span class="number">7</span>] != <span class="string">' '</span>  <span class="comment"># Middle column</span>
-                <span class="line-number">29</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">2</span>] == <span class="variable">board</span>[<span class="number">5</span>] == <span class="variable">board</span>[<span class="number">8</span>] != <span class="string">' '</span>  <span class="comment"># Right column</span>
-                <span class="line-number">30</span>
-                <span class="line-number">31</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">0</span>] == <span class="variable">board</span>[<span class="number">4</span>] == <span class="variable">board</span>[<span class="number">8</span>] != <span class="string">' '</span>  <span class="comment"># Left-top to right-bottom diagonal</span>
-                <span class="line-number">32</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">2</span>] == <span class="variable">board</span>[<span class="number">4</span>] == <span class="variable">board</span>[<span class="number">6</span>] != <span class="string">' '</span>  <span class="comment"># Right-top to left-bottom diagonal</span>
-                <span class="line-number">33</span>     ):
-                <span class="line-number">34</span>         <span class="function">print_board</span>(<span class="variable">board</span>)
-                <span class="line-number">35</span>         <span class="function">print</span>(<span class="string">f"Player {player_symbols[current_player]} won!"</span>)
-                <span class="line-number">36</span>         <span class="function">break</span>
-                <span class="line-number">37</span>
-                <span class="line-number">38</span>     <span class="keyword">if</span> <span class="variable">current_player</span> == <span class="number">0</span>:
-                <span class="line-number">39</span>         <span class="variable">current_player</span> = <span class="number">1</span>
-                <span class="line-number">40</span>     <span class="keyword">elif</span> <span class="variable">current_player</span> == <span class="number">1</span>:
-                <span class="line-number">41</span>         <span class="variable">current_player</span> = <span class="number">0</span>
-                <span class="line-number">42</span>     <span class="function">print_board</span>(<span class="variable">board</span>)
+<span class="line-number">1</span> board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+<span class="line-number">2</span>
+<span class="line-number">3</span> def print_board(board):
+<span class="line-number">4</span>     print(f' {board[0]} | {board[1]} | {board[2]} ')
+<span class="line-number">5</span>     print('---|---|---')
+<span class="line-number">6</span>     print(f' {board[3]} | {board[4]} | {board[5]} ')
+<span class="line-number">7</span>     print('---|---|---')
+<span class="line-number">8</span>     print(f' {board[6]} | {board[7]} | {board[8]} ')
+<span class="line-number">9</span>
+<span class="line-number">10</span> current_player = 0
+<span class="line-number">11</span> player_symbols = ['x', 'o']
+<span class="line-number">12</span> print_board(board)
+<span class="line-number">13</span>
+<span class="line-number">14</span> while True:
+<span class="line-number">15</span>     user_input = input("Choose your square: ").lower()
+<span class="line-number">16</span>     if board[int(user_input) - 1] == ' ':
+<span class="line-number">17</span>         board[int(user_input) - 1] = player_symbols[current_player]
+<span class="line-number">18</span>     else:
+<span class="line-number">19</span>         print("Slot already filled!")
+<span class="line-number">20</span>         continue
+<span class="line-number">21</span>
+<span class="line-number">22</span>     if (
+<span class="line-number">23</span>         board[0] == board[1] == board[2] != ' '  # Top row
+<span class="line-number">24</span>         or board[3] == board[4] == board[5] != ' '  # Middle row
+<span class="line-number">25</span>         or board[6] == board[7] == board[8] != ' '  # Bottom row
+<span class="line-number">26</span>         or board[0] == board[3] == board[6] != ' '  # Left column
+<span class="line-number">27</span>         or board[1] == board[4] == board[7] != ' '  # Middle column
+<span class="line-number">28</span>         or board[2] == board[5] == board[8] != ' '  # Right column
+<span class="line-number">29</span>         or board[0] == board[4] == board[8] != ' '  # Left-top to right-bottom diagonal
+<span class="line-number">30</span>         or board[2] == board[4] == board[6] != ' '  # Right-top to left-bottom diagonal
+<span class="line-number">31</span>     ):
+<span class="line-number">32</span>         print_board(board)
+<span class="line-number">33</span>         print(f"Player {player_symbols[current_player]} won!")
+<span class="line-number">34</span>         break
+<span class="line-number">35</span>     if current_player == 0:
+<span class="line-number">36</span>         current_player = 1
+<span class="line-number">37</span>     elif current_player == 1:
+<span class="line-number">38</span>         current_player = 0
+<span class="line-number">39</span>     print_board(board)
             </code>
         </pre>
     </section>
 </main>
 
 <div class="button-nav">
-    <button class="nav-button" onclick="location.href='step4.html'">⬅ Previous Step</button>
+    <button class="nav-button" onclick="location.href='step3.html'">⬅ Previous Step</button>
     <button class="nav-button" onclick="location.href='guide.html'">⬆ Show step-by-step Guide</button>
     <button class="nav-button" onclick="location.href='step5.html'">➡ Next Step</button>
 </div>
