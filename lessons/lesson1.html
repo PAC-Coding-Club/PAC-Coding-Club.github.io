@@ -2,99 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Coding Club</title>
+    <title>Coding Club - Introduction to Python</title>
     <link rel="stylesheet" href="../pages.css">
-
-    <style>
-        /* Colors the code */
-        .variable { color: red; }
-        .datatype { color: purple; }
-        .operator { color: green; }
-        .statement { color: blue; }
-        .comment { color: gray; }
-        .function { color: orange; }
-    </style>
 </head>
 
 <body>
-    <header>
-        <a href="../index.html" style="text-decoration: none; color: inherit;">
-            <h1>Coding Club Repository</h1>
-        </a>
-    </header>
+<header>
+    <a href="../index.html" style="text-decoration: none; color: inherit;">
+        <h1>Coding Club Repository</h1>
+    </a>
+</header>
 
-    <main>
-        <h2>Lesson 1</h2>
-        <section>
-            <h3>What is Python?</h3>
-            <p>
-                Python is a programming language that is used to create scripts and applications.
-                It is the most popular programming language today due to its simplicity, readability, and extensive community support.
-                Python allows developers to focus on solving problems rather than dealing with complex syntax,
-                making it an excellent choice for beginners and professionals alike.
-            </p>
+<main>
+    <h2>Lesson 1 - Introduction to Python</h2>
 
-            <p>
-                One of Python’s greatest strengths is its interpreted nature, meaning code is executed line by line.
-                This makes it easier to debug, experiment, and understand how programs work step by step. Additionally,
-                Python's vast ecosystem of libraries and frameworks enables efficient development in areas like web development,
-                data science, artificial intelligence, and automation.
-            </p>
+    <section>
+        <h3>What is Python?</h3>
+        <p>
+            Python is a programming language used to create scripts and applications.
+            It is one of the most popular programming languages today because of its simplicity, readability, and strong community support.
+            Python allows developers to focus on solving problems rather than complex syntax, making it an excellent choice for beginners and professionals alike.
+        </p>
 
-            <p>
-                While Python may not be the fastest language in terms of execution speed and can have a larger memory footprint
-                compared to some lower-level languages, these drawbacks are often outweighed by its ease of use, rapid development capabilities,
-                and strong community support. Most importantly, learning Python helps build strong problem-solving skills, which are fundamental
-                to programming in any language.
-            </p>
-        </section>
+        <p>
+            Python is an interpreted language, meaning code is executed line by line.
+            This makes it easier to debug and experiment, allowing programmers to see the results of their code quickly.
+            Python's ecosystem includes a vast collection of libraries for web development, data science, artificial intelligence, automation, and more.
+        </p>
 
-        <section>
-            <h3>Data Types</h3>
-            <span>There are many different ways to store Data. The different ways to do so are known as Data Types. These are the most common data types:</span>
-            <ul>
-                <li><span class="highlight">Integers</span>, like <span class="highlight">1</span> or <span class="highlight">5432</span></li>
-                <li><span class="highlight">Floats</span>, like <span class="highlight">3.12</span> or <span class="highlight">870.23342</span></li>
-                <li><span class="highlight">Strings</span>, like <span class="highlight">"John"</span> or <span class="highlight">"hello world"</span></li>
-                <li><span class="highlight">Booleans</span>, like <span class="highlight">True</span> or <span class="highlight">False</span></li>
-                <li><span class="highlight">Lists</span>, like <span class="highlight">[1, 2, 3]</span></li>
-                <li><span class="highlight">Dictionary</span>, like <span class="highlight">{"name": "John", "age": 30}</span></li>
-            </ul>
-        </section>
+        <p>
+            Although Python may not be the fastest language in execution speed, its ease of use, rapid development capabilities, and strong community support outweigh these drawbacks.
+            Most importantly, learning Python builds problem-solving skills essential for programming in any language.
+        </p>
+    </section>
 
-        <section>
-            <h3>Variables</h3>
-            <p>Variables are used to store data values. They can be used to store values of any type.</p>
-        </section>
+    <section>
+        <h3>Data Types</h3>
+        <p>Data types are different ways to store data in Python. These are the most common data types:</p>
+        <ul>
+            <li><span class="datatype">Integers</span>, like <code>1</code> or <code>5432</code></li>
+            <li><span class="datatype">Floats</span>, like <code>3.12</code> or <code>870.23342</code></li>
+            <li><span class="datatype">Strings</span>, like <code>"John"</code> or <code>"hello world"</code></li>
+            <li><span class="datatype">Booleans</span>, like <code>True</code> or <code>False</code></li>
+            <li><span class="datatype">Lists</span>, like <code>[1, 2, 3]</code></li>
+            <li><span class="datatype">Dictionaries</span>, like <code>{"name": "John", "age": 30}</code></li>
+        </ul>
+    </section>
 
-        <section>
-            <h3>Operators</h3>
-            <p>Operators are used to perform operations on variables and values. The most common operators are:</p>
-            <ul>
-                <li>Arithmetic operators, like <span class="highlight">+</span>, <span class="highlight">-</span>, <span class="highlight">*</span>, <span class="highlight">/</span></li>
-                (Used to perform mathematical operations)
-                <li>Comparison operators, like <span class="highlight">==</span>, <span class="highlight">!=</span>, <span class="highlight">></span>, <span class="highlight"><</span>, <span class="highlight">>=</span>, <span class="highlight"><=</span></li>
-                (Used to create conditions which are evaluated as either True or False)
-                <li>Logical operators, like <span class="highlight">and</span>, <span class="highlight">or</span>, <span class="highlight">not</span> (used to combine conditions)</li>
-                (Used to combine conditions)
-                <li>Assignment operators, like <span class="highlight">=</span>, <span class="highlight">+=</span>, <span class="highlight">-=</span>, <span class="highlight">*=</span>, <span class="highlight">/=</span> (used to set variables)</li>
-                (Used to assign values to variables)
-            </ul>
-        </section>
+    <section>
+        <h3>Variables</h3>
+        <p>
+            Variables are used to store data values in Python. They can hold values of any type.
+            A variable is created by assigning a value to a name using the assignment operator <code>=</code>.
+        </p>
+        <pre class="code-container">
+                <code>
+                    <span class="line-number">1</span> <span class="variable">name</span> = <span class="datatype">"Alice"</span>
+                    <span class="line-number">2</span> <span class="variable">age</span> = <span class="datatype">25</span>
+                    <span class="line-number">3</span> <span class="variable">is_student</span> = <span class="datatype">True</span>
+                </code>
+            </pre>
+    </section>
 
-        <section>
-            <h3>Statements</h3>
-            <p>Statements are used to perform actions. The most common statements are:</p>
-            <ul>
-                <li>Conditional statements, like <span class="highlight">if</span>, <span class="highlight">elif</span>, <span class="highlight">else</span></li>
-                <li>Loop statements, like <span class="highlight">for</span>, <span class="highlight">while</span></li>
-                <li>Exception handling statements, like <span class="highlight">try</span>, <span class="highlight">except</span>, <span class="highlight">finally</span></li>
-            </ul>
-        </section>
+    <section>
+        <h3>Operators</h3>
+        <p>Operators perform operations on variables and values. The most common operators are:</p>
+        <ul>
+            <li><span class="operator">Arithmetic Operators</span>, like <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></li>
+            <li><span class="operator">Comparison Operators</span>, like <code>==</code>, <code>!=</code>, <code>></code>, <code><</code></li>
+            <li><span class="operator">Logical Operators</span>, like <code>and</code>, <code>or</code>, <code>not</code></li>
+            <li><span class="operator">Assignment Operators</span>, like <code>=</code>, <code>+=</code>, <code>-=</code></li>
+        </ul>
+    </section>
 
-        <section>
-            <h3>Example</h3>
-            <pre class="code-container">
+    <section>
+        <h3>Statements</h3>
+        <p>Statements perform actions. Common statements include:</p>
+        <ul>
+            <li><span class="statement">Conditional Statements</span>, like <code>if</code>, <code>elif</code>, <code>else</code></li>
+            <li><span class="statement">Loop Statements</span>, like <code>for</code>, <code>while</code></li>
+            <li><span class="statement">Exception Handling</span>, like <code>try</code>, <code>except</code>, <code>finally</code></li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Example</h3>
+        <pre class="code-container">
                 Vairables are <span class="variable">Red</span>
                 Data Types are <span class="datatype">Purple</span>
                 Operators are <span class="operator">Green</span>
@@ -131,13 +124,12 @@
                     <span class="line-number">27</span> <span class="function">greet</span>(<span class="variable">name</span>)
                 </code>
             </pre>
-        </section>
-    </main>
+    </section>
+</main>
 
-    <div class="button-nav">
-        <button class="nav-button" onclick="location.href='../index.html'">🏠 Home</button>
-        <button class="nav-button" onclick="location.href='../projects/1a-Guess-the-Number/overview.html'">🛠 Relevant Project</button>
-        <button class="nav-button" onclick="location.href='lesson2.html'">➡ Next Lesson</button>
-    </div>
+<div class="button-nav">
+    <button class="nav-button" onclick="location.href='../index.html'">🏠 Home</button>
+    <button class="nav-button" onclick="location.href='lesson2.html'">➡ Next Lesson</button>
+</div>
 </body>
 </html>

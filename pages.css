@@ -15,6 +15,14 @@
     margin-right: 10px;
     color: #999;
 }
+/* Colors the code */
+.variable { color: red; }
+.datatype { color: purple; }
+.operator { color: green; }
+.statement { color: blue; }
+.comment { color: gray; }
+.function { color: orange; }
+
 
 main {
     margin-bottom: 40px; /* matches footer thickness */
