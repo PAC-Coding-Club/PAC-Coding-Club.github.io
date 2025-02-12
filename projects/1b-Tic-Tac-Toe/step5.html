@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Club - Tic-Tac-Toe Step 5</title>
+    <link rel="stylesheet" href="../../pages.css">
+</head>
+<body>
+<header>
+    <a href="../../index.html" style="text-decoration: none; color: inherit;">
+        <h1>Coding Club Repository</h1>
+    </a>
+</header>
+
+<main>
+    <section>
+        <a href="https://github.com/Melted-Coding-Club/1b-TicTacToe/blob/main/Step%205/" target="_blank">
+            <h2>Project 1b: Tic Tac Toe</h2>
+        </a>
+    </section>
+
+    <section>
+        <h3>Step 5 - Input Conversion: Numbers to Coordinates</h3>
+        <ul>
+            <li>In this step, we add the functionality to allow players to input either a number (1-9) or a coordinate (e.g., a1, b2) to choose their square.</li>
+            <li>The code checks if the input is a valid number (1-9). If not, it checks if it matches a coordinate (e.g., a1, b2, etc.).</li>
+            <li>If the input is a coordinate, it is converted to the corresponding number (e.g., a1 becomes 1, b2 becomes 5, etc.).</li>
+            <li>If the input is invalid, an error message is displayed, and the user is prompted to enter a valid input.</li>
+        </ul>
+
+        <pre class="code-container">
+            <code>
+                <span class="line-number">1</span> <span class="variable">board</span> = <span class="list">[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']</span>
+                <span class="line-number">2</span>
+                <span class="line-number">3</span> <span class="function">def</span> <span class="function-name">print_board</span>(<span class="variable">board</span>):
+                <span class="line-number">4</span>     <span class="function">print</span>(<span class="string">f' {board[0]} | {board[1]} | {board[2]} '</span>)
+                <span class="line-number">5</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
+                <span class="line-number">6</span>     <span class="function">print</span>(<span class="string">f' {board[3]} | {board[4]} | {board[5]} '</span>)
+                <span class="line-number">7</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
+                <span class="line-number">8</span>     <span class="function">print</span>(<span class="string">f' {board[6]} | {board[7]} | {board[8]} '</span>)
+                <span class="line-number">9</span>
+                <span class="line-number">10</span> <span class="variable">current_player</span> = <span class="number">0</span>
+                <span class="line-number">11</span> <span class="variable">player_symbols</span> = <span class="list">['x', 'o']</span>
+                <span class="line-number">12</span> <span class="function">print_board</span>(<span class="variable">board</span>)
+                <span class="line-number">13</span>
+                <span class="line-number">14</span> <span class="function">while</span> <span class="keyword">True</span>:
+                <span class="line-number">15</span>     <span class="variable">user_input</span> = <span class="function">input</span>(<span class="string">"Choose your square: "</span>).<span class="function">lower</span>()
+                <span class="line-number">16</span>     <span class="keyword">if</span> <span class="variable">user_input</span> <span class="keyword">not in</span> ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+                <span class="line-number">17</span>         <span class="keyword">if</span> <span class="variable">user_input</span> <span class="keyword">not in</span> ['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3']:
+                <span class="line-number">18</span>             <span class="function">print</span>(<span class="string">"Invalid input"</span>)
+                <span class="line-number">19</span>             <span class="function">continue</span>
+                <span class="line-number">20</span>
+                <span class="line-number">21</span>         <span class="keyword">if</span> <span class="variable">user_input</span>[<span class="number">0</span>] == 'a':
+                <span class="line-number">22</span>             <span class="variable">user_input</span> = <span class="function">int</span>(<span class="variable">user_input</span>[<span class="number">1</span>]) + <span class="number">0</span>
+                <span class="line-number">23</span>         <span class="keyword">elif</span> <span class="variable">user_input</span>[<span class="number">0</span>] == 'b':
+                <span class="line-number">24</span>             <span class="variable">user_input</span> = <span class="function">int</span>(<span class="variable">user_input</span>[<span class="number">1</span>]) + <span class="number">3</span>
+                <span class="line-number">25</span>         <span class="keyword">elif</span> <span class="variable">user_input</span>[<span class="number">0</span>] == 'c':
+                <span class="line-number">26</span>             <span class="variable">user_input</span> = <span class="function">int</span>(<span class="variable">user_input</span>[<span class="number">1</span>]) + <span class="number">6</span>
+                <span class="line-number">27</span>
+                <span class="line-number">28</span>     <span class="keyword">if</span> <span class="function">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] == <span class="string">' '</span>:
+                <span class="line-number">29</span>         <span class="variable">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] = <span class="variable">player_symbols</span>[<span class="variable">current_player</span>]
+                <span class="line-number">30</span>     <span class="keyword">else</span>:
+                <span class="line-number">31</span>         <span class="function">print</span>(<span class="string">"Slot already filled"</span>)
+                <span class="line-number">32</span>         <span class="function">continue</span>
+                <span class="line-number">33</span>
+                <span class="line-number">34</span>     <span class="keyword">if</span> (
+                <span class="line-number">35</span>         <span class="variable">board</span>[<span class="number">0</span>] == <span class="variable">board</span>[<span class="number">1</span>] == <span class="variable">board</span>[<span class="number">2</span>] != <span class="string">' '</span>  <span class="comment"># Top row</span>
+                <span class="line-number">36</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">3</span>] == <span class="variable">board</span>[<span class="number">4</span>] == <span class="variable">board</span>[<span class="number">5</span>] != <span class="string">' '</span>  <span class="comment"># Middle row</span>
+                <span class="line-number">37</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">6</span>] == <span class="variable">board</span>[<span class="number">7</span>] == <span class="variable">board</span>[<span class="number">8</span>] != <span class="string">' '</span>  <span class="comment"># Bottom row</span>
+                <span class="line-number">38</span>
+                <span class="line-number">39</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">0</span>] == <span class="variable">board</span>[<span class="number">3</span>] == <span class="variable">board</span>[<span class="number">6</span>] != <span class="string">' '</span>  <span class="comment"># Left column</span>
+                <span class="line-number">40</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">1</span>] == <span class="variable">board</span>[<span class="number">4</span>] == <span class="variable">board</span>[<span class="number">7</span>] != <span class="string">' '</span>  <span class="comment"># Middle column</span>
+                <span class="line-number">41</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">2</span>] == <span class="variable">board</span>[<span class="number">5</span>] == <span class="variable">board</span>[<span class="number">8</span>] != <span class="string">' '</span>  <span class="comment"># Right column</span>
+                <span class="line-number">42</span>
+                <span class="line-number">43</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">0</span>] == <span class="variable">board</span>[<span class="number">4</span>] == <span class="variable">board</span>[<span class="number">8</span>] != <span class="string">' '</span>  <span class="comment"># Left-top to right-bottom diagonal</span>
+                <span class="line-number">44</span>         <span class="keyword">or</span> <span class="variable">board</span>[<span class="number">2</span>] == <span class="variable">board</span>[<span class="number">4</span>] == <span class="variable">board</span>[<span class="number">6</span>] != <span class="string">' '</span>  <span class="comment"># Right-top to left-bottom diagonal</span>
+                <span class="line-number">45</span>     ):
+                <span class="line-number">46</span>         <span class="function">print_board</span>(<span class="variable">board</span>)
+                <span class="line-number">47</span>         <span class="function">print</span>(<span class="string">f"player {player_symbols[current_player]} won"</span>)
+                <span class="line-number">48</span>         <span class="function">break</span>
+                <span class="line-number">49</span>
+                <span class="line-number">50</span>     <span class="keyword">if</span> <span class="variable">current_player</span> == <span class="number">0</span>:
+                <span class="line-number">51</span>         <span class="variable">current_player</span> = <span class="number">1</span>
+                <span class="line-number">52</span>     <span class="keyword">elif</span> <span class="variable">current_player</span> == <span class="number">1</span>:
+                <span class="line-number">53</span>         <span class="variable">current_player</span> = <span class="number">0</span>
+                <span class="line-number">54</span>     <span class="function">print_board</span>(<span class="variable">board</span>)
+            </code>
+        </pre>
+    </section>
+</main>
+
+<div class="button-nav">
+    <button class="nav-button" onclick="location.href='step4.html'">⬅ Previous Step</button>
+    <button class="nav-button" onclick="location.href='overview.html'">Back to Overview</button>
+</div>
+
+</body>
+</html>

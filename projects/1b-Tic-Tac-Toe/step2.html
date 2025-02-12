@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Club - Tic-Tac-Toe Step 2</title>
+    <link rel="stylesheet" href="../../pages.css">
+</head>
+<body>
+<header>
+    <a href="../../index.html" style="text-decoration: none; color: inherit;">
+        <h1>Coding Club Repository</h1>
+    </a>
+</header>
+
+<main>
+    <section>
+        <a href="https://github.com/Melted-Coding-Club/1b-TicTacToe/blob/main/Step%202/" target="_blank">
+            <h2>Project 1b: Tic Tac Toe</h2>
+        </a>
+    </section>
+
+    <section>
+        <h3>Step 2 - Handling User Input and Player Turns</h3>
+        <ul>
+            <li>We start by defining the current player (line10). For this project, we’ll use <code>0</code> for "x" and <code>1</code> for "o." This makes it easier to manage player turns.</li>
+            <li>We also create a list called <code>player_symbols</code> (line 11) to associate each player with their respective symbol ("x" or "o"). <code>player_symbols[0]</code> will be "x" and <code>player_symbols[1]</code> will be "o."</li>
+            <li>Next (line 12), we print the empty board to show the current state of the game.</li>
+            <li>We then prompt the user to choose a square on the board by entering a number (1-9) (line 14).
+                If the chosen square is empty (line 16), we fill it with the current player’s symbol (line 17).
+                If the square is already filled (line 18), we print a message indicating that it’s taken (line 19).</li>
+            <li>Finally, we print the updated board to reflect the player’s move (line 20).</li>
+        </ul>
+
+        <pre class="code-container">
+            <code>
+                <span class="line-number">1</span> <span class="variable">board</span> = <span class="list">[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']</span>
+                <span class="line-number">2</span>
+                <span class="line-number">3</span> <span class="function">def</span> <span class="function-name">print_board</span>(<span class="variable">board</span>):
+                <span class="line-number">4</span>     <span class="function">print</span>(<span class="string">f' {board[0]} | {board[1]} | {board[2]} '</span>)
+                <span class="line-number">5</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
+                <span class="line-number">6</span>     <span class="function">print</span>(<span class="string">f' {board[3]} | {board[4]} | {board[5]} '</span>)
+                <span class="line-number">7</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
+                <span class="line-number">8</span>     <span class="function">print</span>(<span class="string">f' {board[6]} | {board[7]} | {board[8]} '</span>)
+                <span class="line-number">9</span>
+                <span class="line-number">10</span> <span class="variable">current_player</span> = <span class="number">0</span>
+                <span class="line-number">11</span> <span class="variable">player_symbols</span> = <span class="list">['x', 'o']</span>
+                <span class="line-number">12</span> <span class="function">print_board</span>(<span class="variable">board</span>)
+                <span class="line-number">13</span>
+                <span class="line-number">14</span> <span class="variable">user_input</span> = <span class="function">input</span>(<span class="string">"Choose your square: "</span>)
+                <span class="line-number">15</span>
+                <span class="line-number">16</span> <span class="keyword">if</span> <span class="function">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] == <span class="string">' '</span>:
+                <span class="line-number">17</span>     <span class="variable">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] = <span class="variable">player_symbols</span>[<span class="variable">current_player</span>]
+                <span class="line-number">18</span> <span class="keyword">else</span>:
+                <span class="line-number">19</span>     <span class="function">print</span>(<span class="string">"Slot already filled!"</span>)
+                <span class="line-number">20</span> <span class="function">print_board</span>(<span class="variable">board</span>)
+            </code>
+        </pre>
+        <p>The board setup will output the current state after the user makes their move:</p>
+        <pre class="code-container">
+            <code>
+                <span class="string">    |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">    |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">    |   |  </span>
+            </code>
+        </pre>
+        <p>After the user chooses their square (e.g., square 1) and it’s filled with "x," the board will display:</p>
+        <pre class="code-container">
+            <code>
+                <span class="string">  x |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">    |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">    |   |  </span>
+            </code>
+        </pre>
+    </section>
+</main>
+
+<div class="button-nav">
+    <button class="nav-button" onclick="location.href='step1.html'">⬅ Previous Step</button>
+    <button class="nav-button" onclick="location.href='step3.html'">➡ Next Step</button>
+</div>
+
+</body>
+</html>

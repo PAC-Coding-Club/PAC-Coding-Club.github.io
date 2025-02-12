@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Club - Tic-Tac-Toe Step 3</title>
+    <link rel="stylesheet" href="../../pages.css">
+</head>
+<body>
+<header>
+    <a href="../../index.html" style="text-decoration: none; color: inherit;">
+        <h1>Coding Club Repository</h1>
+    </a>
+</header>
+
+<main>
+    <section>
+        <a href="https://github.com/Melted-Coding-Club/1b-TicTacToe/blob/main/Step%203/" target="_blank">
+            <h2>Project 1b: Tic Tac Toe</h2>
+        </a>
+    </section>
+
+    <section>
+        <h3>Step 3 - Adding the Game Loop</h3>
+        <ul>
+            <li>In this step, we implement a <code>while</code> loop to keep the game going until it is manually stopped (line 14). The loop will continuously prompt the user to pick a square until the game ends (and a <code>break</code> statement is used).</li>
+            <li>We handle player input as before, but now if a slot is already filled, we skip the turn by using the <code>continue</code> statement (line 18). This ensures the player doesn't lose their turn for selecting an invalid square.</li>
+            <li>After each move, we switch the current player. If it's player "x" (current_player == 0), we set it to player "o" (current_player == 1), and vice versa (lines 22-25).</li>
+            <li>We continue printing the board after each turn to keep the game up to date.</li>
+        </ul>
+
+        <pre class="code-container">
+            <code>
+                <span class="line-number">1</span> <span class="variable">board</span> = <span class="list">[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']</span>
+                <span class="line-number">2</span>
+                <span class="line-number">3</span> <span class="function">def</span> <span class="function-name">print_board</span>(<span class="variable">board</span>):
+                <span class="line-number">4</span>     <span class="function">print</span>(<span class="string">f' {board[0]} | {board[1]} | {board[2]} '</span>)
+                <span class="line-number">5</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
+                <span class="line-number">6</span>     <span class="function">print</span>(<span class="string">f' {board[3]} | {board[4]} | {board[5]} '</span>)
+                <span class="line-number">7</span>     <span class="function">print</span>(<span class="string">'---|---|---'</span>)
+                <span class="line-number">8</span>     <span class="function">print</span>(<span class="string">f' {board[6]} | {board[7]} | {board[8]} '</span>)
+                <span class="line-number">9</span>
+                <span class="line-number">10</span> <span class="variable">current_player</span> = <span class="number">0</span>
+                <span class="line-number">11</span> <span class="variable">player_symbols</span> = <span class="list">['x', 'o']</span>
+                <span class="line-number">12</span> <span class="function">print_board</span>(<span class="variable">board</span>)
+                <span class="line-number">13</span>
+                <span class="line-number">14</span> <span class="statement">while</span> <span class="datatype">True</span>:
+                <span class="line-number">15</span>     <span class="variable">user_input</span> = <span class="function">input</span>(<span class="string">"Choose your square: "</span>)
+                <span class="line-number">16</span>     <span class="statement">if</span> <span class="function">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] == <span class="string">' '</span>:
+                <span class="line-number">17</span>         <span class="variable">board</span>[<span class="function">int</span>(<span class="variable">user_input</span>) - <span class="number">1</span>] = <span class="variable">player_symbols</span>[<span class="variable">current_player</span>]
+                <span class="line-number">18</span>     <span class="statement">else</span>:
+                <span class="line-number">19</span>         <span class="function">print</span>(<span class="string">"Slot already filled!"</span>)
+                <span class="line-number">20</span>         <span class="function">continue</span>
+                <span class="line-number">21</span>
+                <span class="line-number">22</span>     <span class="statement">if</span> <span class="variable">current_player</span> == <span class="number">0</span>:
+                <span class="line-number">23</span>         <span class="variable">current_player</span> = <span class="number">1</span>
+                <span class="line-number">24</span>     <span class="statement">elif</span> <span class="variable">current_player</span> == <span class="number">1</span>:
+                <span class="line-number">25</span>         <span class="variable">current_player</span> = <span class="number">0</span>
+                <span class="line-number">26</span>     <span class="function">print_board</span>(<span class="variable">board</span>)
+            </code>
+        </pre>
+        <p>The game will continue prompting players to choose their square. For instance, the board setup will look like this:</p>
+        <pre class="code-container">
+            <code>
+                <span class="string">    |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">    |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">    |   |  </span>
+            </code>
+        </pre>
+        <p>After player "x" picks square 1, the board will display:</p>
+        <pre class="code-container">
+            <code>
+                <span class="string">  x |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">    |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">    |   |  </span>
+            </code>
+        </pre>
+        <p>Then, after player "o" picks square 4, it will look like:</p>
+        <pre class="code-container">
+            <code>
+                <span class="string">  x |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">  o |   |  </span>
+                <span class="string"> ---|---|--- </span>
+                <span class="string">    |   |  </span>
+            </code>
+        </pre>
+    </section>
+</main>
+
+<div class="button-nav">
+    <button class="nav-button" onclick="location.href='step2.html'">⬅ Previous Step</button>
+    <button class="nav-button" onclick="location.href='step4.html'">➡ Next Step</button>
+</div>
+
+</body>
+</html>
