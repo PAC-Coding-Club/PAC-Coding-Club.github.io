@@ -100,7 +100,6 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
     margin-bottom: 20px;
-    width: 97%;
     padding: 20px;
 }
 
