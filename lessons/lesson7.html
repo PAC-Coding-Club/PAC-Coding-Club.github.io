@@ -27,11 +27,17 @@
                 <li>The y-axis increases downward</li>
             </ul>
             <p>Example:</p>
-            <pre class="code-container">
-                <code>
-<span class="line-number">1</span> <span class="variable">position</span> = <span class="datatype">(100, 200)</span>
-                </code>
-            </pre>
+            <div class="code-wrapper">
+                <button class="copy-btn">📋</button>
+                <pre class="code-container">
+<div class="line-numbers">
+1
+</div>
+<code class="code-content">
+<span class="variable">position</span> = <span class="datatype">(100, 200)</span>
+                    </code>
+                </pre>
+            </div>
             <p>This represents a point 100 pixels to the right and 200 pixels down from the top-left corner.</p>
         </section>
 
@@ -42,13 +48,19 @@
                 Rectangles are often used for game objects like players, enemies, or obstacles.
             </p>
             <p>Example:</p>
-            <pre class="code-container">
-                <code>
-<span class="line-number">1</span> <span class="variable">rect_color</span> = <span class="datatype">(255, 0, 0)</span>  <span class="comment"># Red color</span>
-<span class="line-number">2</span> <span class="variable">rect_pos</span> = <span class="datatype">(100, 100, 50, 50)</span>  <span class="comment"># x, y, width, height</span>
-<span class="line-number">3</span> <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="variable">rect_color</span>, <span class="variable">rect_pos</span>)
-                </code>
-            </pre>
+            <div class="code-wrapper">
+                <button class="copy-btn">📋</button>
+                <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3
+</div>
+<code class="code-content">
+<span class="variable">rect_color</span> = <span class="datatype">(255, 0, 0)</span>  <span class="comment"># Red color</span>
+<span class="variable">rect_pos</span> = <span class="datatype">(100, 100, 50, 50)</span>  <span class="comment"># x, y, width, height</span>
+<span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="variable">rect_color</span>, <span class="variable">rect_pos</span>)
+                    </code>
+                </pre>
+            </div>
         </section>
 
         <section>
@@ -57,18 +69,24 @@
                 To move a rectangle, update its x or y position inside the game loop.
                 This creates the illusion of movement.
             </p>
-            <pre class="code-container">
-                <code>
-<span class="line-number">1</span> <span class="variable">x</span> = <span class="datatype">100</span>
-<span class="line-number">2</span> <span class="variable">y</span> = <span class="datatype">100</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span> <span class="statement">while</span> <span class="datatype">True</span>:
-<span class="line-number">5</span>     <span class="variable">x</span> <span class="operator">+=</span> <span class="datatype">1</span>  <span class="comment"># Move right</span>
-<span class="line-number">6</span>     <span class="function">screen.fill</span>(<span class="datatype">(0, 0, 0)</span>)  <span class="comment"># Clear screen</span>
-<span class="line-number">7</span>     <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="datatype">(255, 0, 0)</span>, <span class="datatype">(x, y, 50, 50)</span>)
-<span class="line-number">8</span>     <span class="function">pygame.display.update</span>()
-                </code>
-            </pre>
+            <div class="code-wrapper">
+                <button class="copy-btn">📋</button>
+                <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3<br>4<br>5<br>6<br>7<br>8
+</div>
+<code class="code-content">
+<span class="variable">x</span> = <span class="datatype">100</span>
+<span class="variable">y</span> = <span class="datatype">100</span>
+
+<span class="statement">while</span> <span class="datatype">True</span>:
+    <span class="variable">x</span> <span class="operator">+=</span> <span class="datatype">1</span>  <span class="comment"># Move right</span>
+    <span class="function">screen.fill</span>(<span class="datatype">(0, 0, 0)</span>)  <span class="comment"># Clear screen</span>
+    <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="datatype">(255, 0, 0)</span>, <span class="datatype">(x, y, 50, 50)</span>)
+    <span class="function">pygame.display.update</span>()
+                    </code>
+                </pre>
+            </div>
             <p>This will move the rectangle to the right continuously.</p>
         </section>
 
@@ -78,25 +96,31 @@
                 You can control the movement of objects using keyboard input. In Pygame,
                 this is done by checking events inside the game loop.
             </p>
-            <pre class="code-container">
-                <code>
-<span class="line-number">1</span> <span class="variable">x</span>, <span class="variable">y</span> = <span class="datatype">200</span>, <span class="datatype">200</span>
-<span class="line-number">2</span> <span class="statement">while</span> <span class="datatype">True</span>:
-<span class="line-number">3</span>     <span class="variable">events</span> = <span class="function">pygame.event.get</span>()
-<span class="line-number">4</span>     <span class="statement">for</span> <span class="variable">event</span> <span class="statement">in</span> <span class="variable">events</span>:
-<span class="line-number">5</span>         <span class="statement">if</span> <span class="variable">event.type</span> == <span class="function">pygame.KEYDOWN</span>:
-<span class="line-number">6</span>             <span class="statement">if</span> <span class="variable">event.key</span> == <span class="function">pygame.K_UP</span>:
-<span class="line-number">7</span>                 <span class="variable">y</span> <span class="operator">-=</span> <span class="datatype">5</span>
-<span class="line-number">8</span>             <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_DOWN</span>:
-<span class="line-number">9</span>                 <span class="variable">y</span> <span class="operator">+=</span> <span class="datatype">5</span>
-<span class="line-number">10</span>            <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_LEFT</span>:
-<span class="line-number">11</span>                <span class="variable">x</span> <span class="operator">-=</span> <span class="datatype">5</span>
-<span class="line-number">12</span>            <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_RIGHT</span>:
-<span class="line-number">13</span>                <span class="variable">x</span> <span class="operator">+=</span> <span class="datatype">5</span>
-<span class="line-number">14</span>    <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="datatype">(255, 0, 0)</span>, <span class="datatype">(x, y, 50, 50)</span>)
-<span class="line-number">15</span>    <span class="function">pygame.display.update</span>()
-                </code>
-            </pre>
+            <div class="code-wrapper">
+                <button class="copy-btn">📋</button>
+                <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+</div>
+<code class="code-content">
+<span class="variable">x</span>, <span class="variable">y</span> = <span class="datatype">200</span>, <span class="datatype">200</span>
+<span class="statement">while</span> <span class="datatype">True</span>:
+    <span class="variable">events</span> = <span class="function">pygame.event.get</span>()
+    <span class="statement">for</span> <span class="variable">event</span> <span class="statement">in</span> <span class="variable">events</span>:
+        <span class="statement">if</span> <span class="variable">event.type</span> == <span class="function">pygame.KEYDOWN</span>:
+            <span class="statement">if</span> <span class="variable">event.key</span> == <span class="function">pygame.K_UP</span>:
+                <span class="variable">y</span> <span class="operator">-=</span> <span class="datatype">5</span>
+            <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_DOWN</span>:
+                <span class="variable">y</span> <span class="operator">+=</span> <span class="datatype">5</span>
+            <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_LEFT</span>:
+                <span class="variable">x</span> <span class="operator">-=</span> <span class="datatype">5</span>
+            <span class="statement">elif</span> <span class="variable">event.key</span> == <span class="function">pygame.K_RIGHT</span>:
+                <span class="variable">x</span> <span class="operator">+=</span> <span class="datatype">5</span>
+    <span class="function">pygame.draw.rect</span>(<span class="variable">screen</span>, <span class="datatype">(255, 0, 0)</span>, <span class="datatype">(x, y, 50, 50)</span>)
+    <span class="function">pygame.display.update</span>()
+                    </code>
+                </pre>
+            </div>
             <p>This allows the rectangle to move in all four directions using the arrow keys.</p>
         </section>
     </main>
@@ -105,5 +129,7 @@
         <button class="nav-button" onclick="location.href='lesson6.html'">⬅ Previous Lesson</button>
         <button class="nav-button" onclick="location.href='lesson8.html'">➡ Next Lesson</button>
     </div>
+
+    <script src="../scripts/copy-code.js"></script>
 </body>
 </html>

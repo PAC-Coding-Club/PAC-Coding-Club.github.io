@@ -56,13 +56,19 @@
             Variables are used to store data values in Python. They can hold values of any type.
             A variable is created by assigning a value to a name using the assignment operator <code>=</code>.
         </p>
-        <pre class="code-container">
-                <code>
-<span class="line-number">1</span> <span class="variable">name</span> = <span class="datatype">"Alice"</span>
-<span class="line-number">2</span> <span class="variable">age</span> = <span class="datatype">25</span>
-<span class="line-number">3</span> <span class="variable">is_student</span> = <span class="datatype">True</span>
+        <div class="code-wrapper">
+            <button class="copy-btn">📋</button>
+            <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3
+</div>
+<code class="code-content">
+<span class="variable">name</span> = <span class="datatype">"Alice"</span>
+<span class="variable">age</span> = <span class="datatype">25</span>
+<span class="variable">is_student</span> = <span class="datatype">True</span>
                 </code>
             </pre>
+        </div>
     </section>
 
     <section>
@@ -93,37 +99,43 @@
         <p>Operators are <span class="operator">Green</span></p>
         <p>Statements are <span class="statement">Blue</span></p>
         <p>Functions are <span class="function">Orange</span></p>
-        <pre class="code-container">
-            <code>
-<span class="line-number">1</span> <span class="comment"># Define some variables</span>
-<span class="line-number">2</span> <span class="variable">name</span> = <span class="datatype">"Alice"</span>  <span class="comment"># String variable</span>
-<span class="line-number">3</span> <span class="variable">age</span> = <span class="datatype">25</span>  <span class="comment"># Integer variable</span>
-<span class="line-number">4</span> <span class="variable">height</span> = <span class="datatype">5.6</span>  <span class="comment"># Float variable</span>
-<span class="line-number">5</span> <span class="variable">is_student</span> = <span class="datatype">True</span>  <span class="comment"># Boolean variable</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span> <span class="comment"># Perform arithmetic operation</span>
-<span class="line-number">8</span> <span class="variable">next_year_age</span> = <span class="variable">age</span> <span class="operator">+</span> <span class="datatype">1</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span> <span class="comment"># Conditional statement</span>
-<span class="line-number">11</span> <span class="statement">if</span> <span class="variable">age</span> <span class="operator">>=</span> <span class="datatype">18</span>:
-<span class="line-number">12</span>     <span class="function">print</span>(<span class="datatype">"You are an adult."</span>)
-<span class="line-number">13</span> <span class="statement">else</span>:
-<span class="line-number">14</span>    <span class="function">print</span>(<span class="datatype">"You are a minor."</span>)
-<span class="line-number">15</span>
-<span class="line-number">16</span> <span class="comment"># Loop through a list</span>
-<span class="line-number">17</span> <span class="variable">numbers</span> = <span class="datatype">[1, 2, 3, 4, 5]</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span> <span class="statement">for</span> <span class="variable">num</span> <span class="statement">in</span> <span class="variable">numbers</span>:
-<span class="line-number">20</span>    <span class="function">print</span>(<span class="datatype">f"Number: {num}"</span>)
-<span class="line-number">21</span>
-<span class="line-number">22</span> <span class="comment"># Define a function</span>
-<span class="line-number">23</span> <span class="statement">def</span> <span class="function">greet</span>(<span class="variable">person</span>):
-<span class="line-number">24</span>    <span class="function">print</span>(<span class="datatype">f"Hello, {person}!"</span>)
-<span class="line-number">25</span>
-<span class="line-number">26</span> <span class="comment"># Call the function</span>
-<span class="line-number">27</span> <span class="function">greet</span>(<span class="variable">name</span>)
-            </code>
-        </pre>
+        <div class="code-wrapper">
+            <button class="copy-btn">📋</button>
+            <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27
+</div>
+<code class="code-content">
+<span class="comment"># Define some variables</span>
+<span class="variable">name</span> = <span class="datatype">"Alice"</span>  <span class="comment"># String variable</span>
+<span class="variable">age</span> = <span class="datatype">25</span>  <span class="comment"># Integer variable</span>
+<span class="variable">height</span> = <span class="datatype">5.6</span>  <span class="comment"># Float variable</span>
+<span class="variable">is_student</span> = <span class="datatype">True</span>  <span class="comment"># Boolean variable</span>
+
+<span class="comment"># Perform arithmetic operation</span>
+<span class="variable">next_year_age</span> = <span class="variable">age</span> <span class="operator">+</span> <span class="datatype">1</span>
+
+<span class="comment"># Conditional statement</span>
+<span class="statement">if</span> <span class="variable">age</span> <span class="operator">>=</span> <span class="datatype">18</span>:
+    <span class="function">print</span>(<span class="datatype">"You are an adult."</span>)
+<span class="statement">else</span>:
+   <span class="function">print</span>(<span class="datatype">"You are a minor."</span>)
+
+<span class="comment"># Loop through a list</span>
+<span class="variable">numbers</span> = <span class="datatype">[1, 2, 3, 4, 5]</span>
+
+<span class="statement">for</span> <span class="variable">num</span> <span class="statement">in</span> <span class="variable">numbers</span>:
+    <span class="function">print</span>(<span class="datatype">f"Number: {num}"</span>)
+
+<span class="comment"># Define a function</span>
+<span class="statement">def</span> <span class="function">greet</span>(<span class="variable">person</span>):
+    <span class="function">print</span>(<span class="datatype">f"Hello, {person}!"</span>)
+
+<span class="comment"># Call the function</span>
+<span class="function">greet</span>(<span class="variable">name</span>)
+                </code>
+            </pre>
+        </div>
     </section>
 </main>
 
@@ -131,5 +143,7 @@
     <button class="nav-button" onclick="location.href='../index.html'">🏠 Home</button>
     <button class="nav-button" onclick="location.href='lesson2.html'">➡ Next Lesson</button>
 </div>
+
+<script src="../scripts/copy-code.js"></script>
 </body>
 </html>

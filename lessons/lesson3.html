@@ -24,15 +24,21 @@
             In Python, the most common conditional statements are <span class="statement">if</span>, <span class="statement">elif</span>, and <span class="statement">else</span>.
         </p>
         <p>Here's an example:</p>
-        <pre class="code-container">
-            <code>
-<span class="line-number">1</span> <span class="variable">age</span> = <span class="datatype">18</span>
-<span class="line-number">2</span> <span class="statement">if</span> <span class="variable">age</span> <span class="operator">>=</span> <span class="datatype">18</span>:
-<span class="line-number">3</span>     <span class="function">print</span>(<span class="datatype">"You are an adult."</span>)
-<span class="line-number">4</span> <span class="statement">else</span>:
-<span class="line-number">5</span>     <span class="function">print</span>(<span class="datatype">"You are a minor."</span>)
-            </code>
-        </pre>
+        <div class="code-wrapper">
+            <button class="copy-btn">📋</button>
+            <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3<br>4<br>5
+</div>
+<code class="code-content">
+<span class="variable">age</span> = <span class="datatype">18</span>
+<span class="statement">if</span> <span class="variable">age</span> <span class="operator">>=</span> <span class="datatype">18</span>:
+<span class="function">print</span>(<span class="datatype">"You are an adult."</span>)
+<span class="statement">else</span>:
+<span class="function">print</span>(<span class="datatype">"You are a minor."</span>)
+                </code>
+            </pre>
+        </div>
         <p>This would output: <code>You are an adult.</code></p>
     </section>
 
@@ -42,17 +48,23 @@
             You can check multiple conditions using <span class="statement">elif</span> or nest conditions inside each other.
             For example:
         </p>
-        <pre class="code-container">
-            <code>
-<span class="line-number">1</span> <span class="variable">score</span> = <span class="datatype">85</span>
-<span class="line-number">2</span> <span class="statement">if</span> <span class="variable">score</span> <span class="operator">>=</span> <span class="datatype">90</span>:
-<span class="line-number">3</span>     <span class="function">print</span>(<span class="datatype">"Grade: A"</span>)
-<span class="line-number">4</span> <span class="statement">elif</span> <span class="variable">score</span> <span class="operator">>=</span> <span class="datatype">80</span>:
-<span class="line-number">5</span>     <span class="function">print</span>(<span class="datatype">"Grade: B"</span>)
-<span class="line-number">6</span> <span class="statement">else</span>:
-<span class="line-number">7</span>     <span class="function">print</span>(<span class="datatype">"Grade: C"</span>)
-            </code>
-        </pre>
+        <div class="code-wrapper">
+            <button class="copy-btn">📋</button>
+            <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3<br>4<br>5<br>6<br>7
+</div>
+<code class="code-content">
+<span class="variable">score</span> = <span class="datatype">85</span>
+<span class="statement">if</span> <span class="variable">score</span> <span class="operator">>=</span> <span class="datatype">90</span>:
+    <span class="function">print</span>(<span class="datatype">"Grade: A"</span>)
+<span class="statement">elif</span> <span class="variable">score</span> <span class="operator">>=</span> <span class="datatype">80</span>:
+    <span class="function">print</span>(<span class="datatype">"Grade: B"</span>)
+<span class="statement">else</span>:
+    <span class="function">print</span>(<span class="datatype">"Grade: C"</span>)
+                </code>
+            </pre>
+        </div>
         <p>This would output: <code>Grade: B</code></p>
     </section>
 
@@ -70,13 +82,19 @@
     <section>
         <h3>For Loops</h3>
         <p>Example of a <span class="statement">for</span> loop:</p>
-        <pre class="code-container">
-            <code>
-<span class="line-number">1</span> <span class="variable">numbers</span> = <span class="datatype">[1, 2, 3, 4, 5]</span>
-<span class="line-number">2</span> <span class="statement">for</span> <span class="variable">num</span> <span class="statement">in</span> <span class="variable">numbers</span>:
-<span class="line-number">3</span>     <span class="function">print</span>(<span class="datatype">f"Number: {num}"</span>)
-            </code>
-        </pre>
+        <div class="code-wrapper">
+            <button class="copy-btn">📋</button>
+            <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3
+</div>
+<code class="code-content">
+<span class="variable">numbers</span> = <span class="datatype">[1, 2, 3, 4, 5]</span>
+<span class="statement">for</span> <span class="variable">num</span> <span class="statement">in</span> <span class="variable">numbers</span>:
+    <span class="function">print</span>(<span class="datatype">f"Number: {num}"</span>)
+                </code>
+            </pre>
+        </div>
         <p>This would output:</p>
         <code>
             Number: 1<br>
@@ -90,14 +108,20 @@
     <section>
         <h3>While Loops</h3>
         <p>Example of a <span class="statement">while</span> loop:</p>
-        <pre class="code-container">
-            <code>
-<span class="line-number">1</span> <span class="variable">count</span> = <span class="datatype">0</span>
-<span class="line-number">2</span> <span class="statement">while</span> <span class="variable">count</span> <span class="operator"><</span> <span class="datatype">5</span>:
-<span class="line-number">3</span>     <span class="function">print</span>(<span class="datatype">f"Count: {count}"</span>)
-<span class="line-number">4</span>     <span class="variable">count</span> <span class="operator">+=</span> <span class="datatype">1</span>
-            </code>
-        </pre>
+        <div class="code-wrapper">
+            <button class="copy-btn">📋</button>
+            <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3<br>4
+</div>
+<code class="code-content">
+<span class="variable">count</span> = <span class="datatype">0</span>
+<span class="statement">while</span> <span class="variable">count</span> <span class="operator"><</span> <span class="datatype">5</span>:
+    <span class="function">print</span>(<span class="datatype">f"Count: {count}"</span>)
+    <span class="variable">count</span> <span class="operator">+=</span> <span class="datatype">1</span>
+                </code>
+            </pre>
+        </div>
         <p>This would output:</p>
         <code>
             Count: 0<br>
@@ -114,5 +138,7 @@
     <button class="nav-button" onclick="location.href='../projects/1a-Guess-the-Number/overview.html'">🛠 Relevant Project - 1a</button>
     <button class="nav-button" onclick="location.href='lesson4.html'">➡ Next Lesson</button>
 </div>
+
+<script src="../scripts/copy-code.js"></script>
 </body>
 </html>

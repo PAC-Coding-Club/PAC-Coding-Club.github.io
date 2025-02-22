@@ -15,7 +15,7 @@
 
 <main>
     <section>
-        <a href="https://github.com/Melted-Coding-Club/1b-TicTacToe/blob/main/Step%205/" target="_blank">
+        <a href="https://github.com/Melted-Coding-Club/1b-TicTacToe" target="_blank">
             <h2>Project 1b: Tic Tac Toe</h2>
         </a>
     </section>
@@ -29,64 +29,70 @@
             <li>If the input is invalid, an error message is displayed, and the user is prompted to enter a valid input.</li>
         </ul>
 
-        <pre class="code-container">
-            <code>
-<span class="line-number">1</span> board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-<span class="line-number">2</span>
-<span class="line-number">3</span> def print_board(board):
-<span class="line-number">4</span>     print(f' {board[0]} | {board[1]} | {board[2]} ')
-<span class="line-number">5</span>     print('---|---|---')
-<span class="line-number">6</span>     print(f' {board[3]} | {board[4]} | {board[5]} ')
-<span class="line-number">7</span>     print('---|---|---')
-<span class="line-number">8</span>     print(f' {board[6]} | {board[7]} | {board[8]} ')
-<span class="line-number">9</span>
-<span class="line-number">10</span> current_player = 0
-<span class="line-number">11</span> player_symbols = ['x', 'o']
-<span class="line-number">12</span> print_board(board)
-<span class="line-number">13</span>
-<span class="line-number">14</span> while True:
-<span class="line-number">15</span>     user_input = input("Choose your square: ").lower()
-<span class="line-number">16</span>     if user_input not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
-<span class="line-number">17</span>         if user_input not in ['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3']:
-<span class="line-number">18</span>             print("Invalid input")
-<span class="line-number">19</span>             continue
-<span class="line-number">20</span>
-<span class="line-number">21</span>         if user_input[0] == 'a':
-<span class="line-number">22</span>             user_input = int(user_input[1]) + 0
-<span class="line-number">23</span>         elif user_input[0] == 'b':
-<span class="line-number">24</span>             user_input = int(user_input[1]) + 3
-<span class="line-number">25</span>         elif user_input[0] == 'c':
-<span class="line-number">26</span>             user_input = int(user_input[1]) + 6
-<span class="line-number">27</span>
-<span class="line-number">28</span>     if board[int(user_input) - 1] == ' ':
-<span class="line-number">29</span>         board[int(user_input) - 1] = player_symbols[current_player]
-<span class="line-number">30</span>     else:
-<span class="line-number">31</span>         print("Slot already filled")
-<span class="line-number">32</span>         continue
-<span class="line-number">33</span>
-<span class="line-number">34</span>     if (
-<span class="line-number">35</span>         board[0] == board[1] == board[2] != ' '  # Top row
-<span class="line-number">36</span>         or board[3] == board[4] == board[5] != ' '  # Middle row
-<span class="line-number">37</span>         or board[6] == board[7] == board[8] != ' '  # Bottom row
-<span class="line-number">38</span>
-<span class="line-number">39</span>         or board[0] == board[3] == board[6] != ' '  # Left column
-<span class="line-number">40</span>         or board[1] == board[4] == board[7] != ' '  # Middle column
-<span class="line-number">41</span>         or board[2] == board[5] == board[8] != ' '  # Right column
-<span class="line-number">42</span>
-<span class="line-number">43</span>         or board[0] == board[4] == board[8] != ' '  # Left-top to right-bottom diagonal
-<span class="line-number">44</span>         or board[2] == board[4] == board[6] != ' '  # Right-top to left-bottom diagonal
-<span class="line-number">45</span>     ):
-<span class="line-number">46</span>         print_board(board)
-<span class="line-number">47</span>         print(f"player {player_symbols[current_player]} won")
-<span class="line-number">48</span>         break
-<span class="line-number">49</span>
-<span class="line-number">50</span>     if current_player == 0:
-<span class="line-number">51</span>         current_player = 1
-<span class="line-number">52</span>     elif current_player == 1:
-<span class="line-number">53</span>         current_player = 0
-<span class="line-number">54</span>     print_board(board)
-            </code>
-        </pre>
+        <div class="code-wrapper">
+            <button class="copy-btn">📋</button>
+            <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54
+</div>
+<code class="code-content">
+board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+
+def print_board(board):
+    print(f' {board[0]} | {board[1]} | {board[2]} ')
+    print('---|---|---')
+    print(f' {board[3]} | {board[4]} | {board[5]} ')
+    print('---|---|---')
+    print(f' {board[6]} | {board[7]} | {board[8]} ')
+
+current_player = 0
+player_symbols = ['x', 'o']
+print_board(board)
+
+while True:
+    user_input = input("Choose your square: ").lower()
+    if user_input not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+        if user_input not in ['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3']:
+            print("Invalid input")
+            continue
+
+        if user_input[0] == 'a':
+            user_input = int(user_input[1]) + 0
+        elif user_input[0] == 'b':
+            user_input = int(user_input[1]) + 3
+        elif user_input[0] == 'c':
+            user_input = int(user_input[1]) + 6
+
+    if board[int(user_input) - 1] == ' ':
+        board[int(user_input) - 1] = player_symbols[current_player]
+    else:
+        print("Slot already filled")
+        continue
+
+    if (
+        board[0] == board[1] == board[2] != ' '  # Top row
+        or board[3] == board[4] == board[5] != ' '  # Middle row
+        or board[6] == board[7] == board[8] != ' '  # Bottom row
+
+        or board[0] == board[3] == board[6] != ' '  # Left column
+        or board[1] == board[4] == board[7] != ' '  # Middle column
+        or board[2] == board[5] == board[8] != ' '  # Right column
+
+        or board[0] == board[4] == board[8] != ' '  # Left-top to right-bottom diagonal
+        or board[2] == board[4] == board[6] != ' '  # Right-top to left-bottom diagonal
+    ):
+        print_board(board)
+        print(f"player {player_symbols[current_player]} won")
+        break
+
+    if current_player == 0:
+        current_player = 1
+    elif current_player == 1:
+        current_player = 0
+    print_board(board)
+                </code>
+            </pre>
+        </div>
     </section>
 </main>
 

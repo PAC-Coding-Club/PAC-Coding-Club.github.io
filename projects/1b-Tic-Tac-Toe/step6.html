@@ -15,7 +15,7 @@
 
 <main>
     <section>
-        <a href="https://github.com/Melted-Coding-Club/1b-TicTacToe/blob/main/Step%205%20to%206/" target="_blank">
+        <a href="https://github.com/Melted-Coding-Club/1b-TicTacToe" target="_blank">
             <h2>Project 1b: Tic-Tac-Toe</h2>
         </a>
     </section>
@@ -32,67 +32,73 @@
             <li>After every turn, we switch to the next player by alternating between index 0 and 1 in the <code>player_symbols</code> list.</li>
         </ul>
 
-        <pre class="code-container">
-            <code>
-<span class="line-number">1</span> board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']  # Initialize the game board
-<span class="line-number">2</span> player_symbols = ['x', 'o']  # Player symbols
-<span class="line-number">3</span> current_player = 0  # Start with player 0 (x)
-<span class="line-number">4</span>
-<span class="line-number">5</span> def print_board(board):
-<span class="line-number">6</span>     print(f' {board[0]} | {board[1]} | {board[2]} ')
-<span class="line-number">7</span>     print('---|---|---')
-<span class="line-number">8</span>     print(f' {board[3]} | {board[4]} | {board[5]} ')
-<span class="line-number">9</span>     print('---|---|---')
-<span class="line-number">10</span>     print(f' {board[6]} | {board[7]} | {board[8]} ')
-<span class="line-number">11</span>
-<span class="line-number">12</span> def is_valid_input(user_input):
-<span class="line-number">13</span>     """Validates if input is a valid number or coordinate."""
-<span class="line-number">14</span>     return user_input in ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3']
-<span class="line-number">15</span>
-<span class="line-number">16</span> def convert_to_number(user_input):
-<span class="line-number">17</span>     """Converts coordinate input to board index."""
-<span class="line-number">18</span>     if user_input[0] == 'a':
-<span class="line-number">19</span>         return int(user_input[1]) - 1
-<span class="line-number">20</span>     elif user_input[0] == 'b':
-<span class="line-number">21</span>         return int(user_input[1]) + 2
-<span class="line-number">22</span>     elif user_input[0] == 'c':
-<span class="line-number">23</span>         return int(user_input[1]) + 5
-<span class="line-number">24</span>     return int(user_input) - 1
-<span class="line-number">25</span>
-<span class="line-number">26</span> def check_win(board):
-<span class="line-number">27</span>     """Checks if a player has won the game."""
-<span class="line-number">28</span>     winning_combinations = [
-<span class="line-number">29</span>         [0, 1, 2], [3, 4, 5], [6, 7, 8],  # rows
-<span class="line-number">30</span>         [0, 3, 6], [1, 4, 7], [2, 5, 8],  # columns
-<span class="line-number">31</span>         [0, 4, 8], [2, 4, 6]  # diagonals
-<span class="line-number">32</span>     ]
-<span class="line-number">33</span>     for combo in winning_combinations:
-<span class="line-number">34</span>         if board[combo[0]] == board[combo[1]] == board[combo[2]] != ' ':
-<span class="line-number">35</span>             return True
-<span class="line-number">36</span>     return False
-<span class="line-number">37</span>
-<span class="line-number">38</span> print_board(board)
-<span class="line-number">39</span> while True:
-<span class="line-number">40</span>     user_input = input("Choose your square: ").lower()
-<span class="line-number">41</span>     if not is_valid_input(user_input):
-<span class="line-number">42</span>         print("Invalid input")
-<span class="line-number">43</span>         continue
-<span class="line-number">44</span>     board_position = convert_to_number(user_input)
-<span class="line-number">45</span>     if board[board_position] == ' ':
-<span class="line-number">46</span>         board[board_position] = player_symbols[current_player]
-<span class="line-number">47</span>     else:
-<span class="line-number">48</span>         print("Slot already filled")
-<span class="line-number">49</span>         continue
-<span class="line-number">50</span>
-<span class="line-number">51</span>     if check_win(board):
-<span class="line-number">52</span>         print_board(board)
-<span class="line-number">53</span>         print(f"Player {player_symbols[current_player]} won!")
-<span class="line-number">54</span>         break
-<span class="line-number">55</span>
-<span class="line-number">56</span>     current_player = 1 - current_player  # Switch players
-<span class="line-number">57</span>     print_board(board)
-            </code>
-        </pre>
+        <div class="code-wrapper">
+            <button class="copy-btn">📋</button>
+            <pre class="code-container">
+<div class="line-numbers">
+1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br>55<br>56<br>57
+</div>
+<code class="code-content">
+board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']  # Initialize the game board
+player_symbols = ['x', 'o']  # Player symbols
+current_player = 0  # Start with player 0 (x)
+
+def print_board(board):
+    print(f' {board[0]} | {board[1]} | {board[2]} ')
+    print('---|---|---')
+    print(f' {board[3]} | {board[4]} | {board[5]} ')
+    print('---|---|---')
+    print(f' {board[6]} | {board[7]} | {board[8]} ')
+
+def is_valid_input(user_input):
+    """Validates if input is a valid number or coordinate."""
+    return user_input in ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3']
+
+def convert_to_number(user_input):
+    """Converts coordinate input to board index."""
+    if user_input[0] == 'a':
+        return int(user_input[1]) - 1
+    elif user_input[0] == 'b':
+        return int(user_input[1]) + 2
+    elif user_input[0] == 'c':
+        return int(user_input[1]) + 5
+    return int(user_input) - 1
+
+def check_win(board):
+    """Checks if a player has won the game."""
+    winning_combinations = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],  # rows
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],  # columns
+        [0, 4, 8], [2, 4, 6]  # diagonals
+    ]
+    for combo in winning_combinations:
+        if board[combo[0]] == board[combo[1]] == board[combo[2]] != ' ':
+            return True
+    return False
+
+print_board(board)
+while True:
+    user_input = input("Choose your square: ").lower()
+    if not is_valid_input(user_input):
+        print("Invalid input")
+        continue
+    board_position = convert_to_number(user_input)
+    if board[board_position] == ' ':
+        board[board_position] = player_symbols[current_player]
+    else:
+        print("Slot already filled")
+        continue
+
+    if check_win(board):
+        print_board(board)
+        print(f"Player {player_symbols[current_player]} won!")
+        break
+
+    current_player = 1 - current_player  # Switch players
+    print_board(board)
+                </code>
+            </pre>
+        </div>
 
         <p>This will enable the players to take turns, making moves and checking if any player has won.</p>
     </section>

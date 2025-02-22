@@ -4,17 +4,46 @@
     font-family: monospace;
     background-color: #f4f4f4;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow-x: auto;
     border: 1px solid #ddd;
+    display: flex;
 }
-.line-number {
-    display: inline-block;
-    width: 30px;
+.line-numbers {
+    padding-right: 10px;
     text-align: right;
-    margin-right: 10px;
-    color: #999;
+    user-select: none;
+    color: #888;
 }
+.code-content {
+    flex: 1;
+}
+.copy-btn {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    position: absolute;
+    top: 20px;
+    right: 8px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 40px;
+    box-shadow: none;
+    z-index: 10; /* Ensures the button is always on top */
+}
+.copy-btn:hover {
+    background: #21a1f1;
+    transform: scale(1.1);
+}
+.code-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
 /* Colors the code */
 .variable { color: red; }
 .datatype { color: purple; }
